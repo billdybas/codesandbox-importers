@@ -52,6 +52,11 @@ export function getMainFile(template: ITemplate) {
     return "package.json";
   }
 
+  if (template === "razzle") {
+    // Wildcard, because razzle is not specific on this
+    return "package.json";
+  }
+
   if (template === "nest") {
     return "src/main.ts";
   }
@@ -181,6 +186,10 @@ export function getTemplate(
     totalDependencies.indexOf("@nestjs/common") > -1
   ) {
     return "nest";
+  }
+
+  if (totalDependencies.indexOf("razzle")) {
+    return "razzle";
   }
 
   return undefined;

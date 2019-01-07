@@ -40,7 +40,8 @@ export type ITemplate =
   | "ember"
   | "nest"
   | "static"
-  | "styleguidist";
+  | "styleguidist"
+  | "razzle";
 
 export interface ISandbox {
   title: string;
